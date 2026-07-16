@@ -9,16 +9,16 @@
 import math
 
 def CheckPrime(No):
-    Ans = True
 
-    for i in range (2, (math.isqrt(No)+1)):
+    if No < 2:
+        return False
 
-        if(No % i == 0):
-            Ans = False
+    for i in range(2, math.isqrt(No) + 1):
+        if No % i == 0:
+            return False
 
-            
+    return True
 
-    return Ans
 
 def main():
 
@@ -26,10 +26,11 @@ def main():
 
     Ret = CheckPrime(Value1)
 
-    if (Ret == True):
+    if Ret:
         print("It is a prime number")
     else:
         print("It is not a prime number")
+
 
 if __name__ == "__main__":
     main()
